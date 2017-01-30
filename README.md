@@ -12,20 +12,12 @@
 
 ![](res/python_console.png)
 
-写下第一个程序（或者执行`$ python source/base/hello.py `）：
+写下第一个程序（或者执行`$ python source/basics/hello.py `）：
 
 ```python
 >>> print("Hello, world!")
 Hello, world!
 ```
-
-`print`(objects, sep=' ', end='\n', file=sys.stdout, flush=False)
-
-将 object 打印到文本流 file，由 sep分隔，尾部接 end。sep, end 和 file，如果提供这三个参数的话，必须以关键参数的形式。
-如果没有打印对象, `print()` 只打印一个 结束符号 end.
-文件参数必须是具有`write(string)`方法的对象；如果不存在或`None`，将使用`sys.stdout`。由于打印的参数被转换为文本字符串，因此`print()`不能与二进制模式文件对象一起使用。对于这些，请改用`file.write(...)`。
-尽管通常是由 file 参数来决定输出流是否缓存，但是如果 flush 参数为ture，那么输出流将会被强制刷新。
-在版本3.3中已更改：添加了 flush 关键字参数。
 
 > 行尾不需添加分号，这点不同于其他语言。如果一行有更多语句，需分号，但不建议这样的编程习惯。
 
@@ -33,13 +25,83 @@ Hello, world!
 
 ### 数字和表达式
 
-示例：`$ python source/base/numeral.py `
+`source/basics/basics.py `
+
+```python
+# 导入模块
+from math import floor
+from math import sqrt
+import cmath
+
+# 导入模块
+# 加法
+print('123 + 234 = ' + str(123 + 234))
+
+# 减法
+print('111 - 11 = ' + str(111 - 11))
+
+# 除法
+print('10 / 3 = ' + str(10 / 3))
+
+# 向下取整
+print('10 // 3 = ' + str(10 // 3))
+
+print('1.0 / 2.0 = ' + str(1.0 / 2.0))
+print('1.0 // 2.0 = ' + str(1.0 // 2.0))
+
+# 取余
+print('1 % 2 = ' + str(1 % 2))
+
+# 幂运算
+print('2^3 = ' + str(2 ** 3))
+
+# 十六进制
+print(0xAF)
+
+# 八进制
+print(0o20)
+
+# 变量 赋值
+x = 10
+# 获取用户输入
+# y = input('输入一个整数数字 y = ')
+y = 11
+print('10 * y = ' + str(x * int(y)))
+
+# 函数
+print('-100的绝对值：' + str(abs(-100)))
+print('3.0 / 2.0 浮点数四舍五入：' + str(round(3.0 / 2.0)))
+print('2^3 = pow(2, 3)：' + str(pow(2, 3)))
+print('1.8向下取整：' + str(floor(1.8)))
+print('4的平方根：' + str(sqrt(4)))
+print('-1的平方根：' + str(cmath.sqrt(-1)))
+
+# 字符串前加上 r ，不转义
+print('转义，hello, \nworld')
+print(r'原始字符串，hello, \nworld')
+```
 
 
 
 ## 列表和元组
 
+Python中有6种内建的序列，最常用的两种：列表和元组。其他还有字符串、Unicode字符串、buffer对象和xrange对象。
 
+列表可修改，元组不可修改，这是它们的区别。
+
+* 序列 - `source/lists_tuples/indexing.py `
+
+* 序列示例 - `source/lists_tuples/indexing_example.py`
+
+* 相加 - `source/lists_tuples/adding_sequences.py`
+
+* 乘法 - `source/lists_tuples/multiplication_sequences.py`
+
+* 乘法示例 - `source/lists_tuples/multiplication_sequences.py`
+
+* 分片 - `source/lists_tuples/slicing.py`
+
+  ​
 
 ## 使用字符串
 
