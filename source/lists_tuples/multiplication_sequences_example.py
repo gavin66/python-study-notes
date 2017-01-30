@@ -1,5 +1,17 @@
-print('python' * 5)
-print([42] * 10)
+"""
+序列乘法
+"""
 
-# 创建长度为10的空列表
-print('[None] * 10 : '+ str([None] * 10))
+sentence = input("你的名字: ")
+screen_width = 80
+text_width = len(sentence)
+box_width = text_width + 6
+left_margin = (screen_width - box_width) // 2
+
+print('')
+print(' ' * left_margin + '+' + '-' * (box_width - 2) + '+')
+print(' ' * left_margin + '|  ' + ' ' * text_width + '  |')
+print(' ' * left_margin + '|  ' + sentence + '  |')
+print(' ' * left_margin + '|  ' + ' ' * text_width + '  |')
+print(' ' * left_margin + '+' + '-' * (box_width - 2) + '+')
+print('')
