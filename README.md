@@ -130,7 +130,15 @@ TypeError: object doesn't support slice assignment
 
 ##  字典
 
+通过名字引用值的数据结构类型为映射。字典是Python唯一的内建的映射类型。
 
+* 字典的使用 - `source/dictionaries/uses.py`
+
+* 字典使用示例 - `source/dictionaries/example.py`
+
+* 字典方法 - `source/dictionaries/methods.py`
+
+  ​
 
 ## 条件、循环和其他语句
 
