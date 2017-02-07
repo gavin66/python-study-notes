@@ -105,6 +105,27 @@ Python中有6种内建的序列，最常用的两种：列表和元组。其他�
 
 ## 使用字符串
 
+所有标准的序列操作（索引、分片、乘法、判断成员资格、求长度、取最小值和最大值）对字符串同样适用。但是，字符串都是不可变的。因此，以下项或分片赋值都是不合法的。
+
+```python
+>>> website = 'http://www.python.org'
+>>> website[-3:] = 'com'
+Traceback (most recent call last):
+  File "<pyshell#19>", line 1, in ?
+    website[-3:] = 'com'
+TypeError: object doesn't support slice assignment
+```
+
+* 字符串格式化：精简版 - `source/strings/formatting_short.py`
+
+* 字符串格式化：完整版 - `source/strings/formatting_long.py`
+
+* 字符串格式化示例 - `source/strings/formatting_example.py`
+
+* 字符串方法 - `source/strings/string_methods.py`
+
+  ​
+
 
 
 ##  字典
