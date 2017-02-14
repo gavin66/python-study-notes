@@ -144,6 +144,71 @@ TypeError: object doesn't support slice assignment
 
 
 
+### 把某件事作为另一件事导入
+
+```python
+import somemodule
+# 或者
+from somemodule import somefunction
+# 或者
+from somemodule import somefunction, anotherfunction, yetanotherfunction
+# 或者
+from somemodule import *
+```
+
+只有确定自己想要从给定的模块导入所有功能时，才应该使用最后一个版本。但是如果两个模块都有`open`函数，那又该怎么办？只需使用第一种方式导入，然后像下面这样使用函数：
+
+```python
+module1.open(...)
+module2.open(...)
+```
+
+但还有另外的选择：可以在语句末尾增加一个as字句，在该字句后给出名字，或为整个模块提供别名：
+
+```python
+>>> import math as foobar
+>>> foobar.sqrt(4)
+2.0
+```
+
+也可以为函数提供别名：
+
+```python
+>>> from math import sqrt as foobar
+>>> foobar(4)
+2.0
+```
+
+对于open函数，可以像下面这样使用：
+
+```python
+from module1 import open as open1
+from module2 import open as open2
+```
+
+
+
+* 赋值魔法 - `source/conditionals_loops_statements/assignment_magic.py`
+* 条件与条件语句 - `source/conditionals_loops_statements/conditions_statements.py`
+*  比较运算符
+
+|    表达式     |         描述          |
+| :--------: | :-----------------: |
+|   x == y   |       x 等于 y        |
+|   x < y    |       x 小于 y        |
+|   x > y    |       x 大于 y        |
+|   x >= y   |      x 大于等于 y       |
+|   x <= y   |      x 小于等于 y       |
+|   x != y   |       x 不等于 y       |
+|   x is y   |    x 和 y 是同一个对象     |
+| x is not y |    x 和 y 是不同的对象     |
+|   x in y   | x 是 y 容器（例如，序列）的成员  |
+| x not in y | x 不是 y 容器（例如，序列）的成员 |
+
+* 循环 - `source/conditionals_loops_statements/loops.py`
+
+
+
 ## 抽象
 
 
