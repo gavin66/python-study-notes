@@ -211,6 +211,11 @@ from module2 import open as open2
 
 ## 抽象
 
+* 创建函数 - `source/abstraction/creating_functions.py`
+* 参数魔法 - `source/abstraction/parameters_magic.py`
+* 闭包 - `source/abstraction/closure.py`
+* 递归 - `source/abstraction/recursion.py`
+
 
 
 ## 异常
