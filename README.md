@@ -218,6 +218,15 @@ from module2 import open as open2
 
 
 
+## 更加抽象
+
+* 一个类实例 - `source/more_abstraction/Person.py`
+* 类的命名空间 - `source/more_abstraction/class_namespace.py`
+* 类的私有属性 - `source/more_abstraction/privacy.py`
+* 超类 - `source/more_abstraction/superclass.py`
+
+
+
 ## 异常
 
 
