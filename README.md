@@ -229,9 +229,70 @@ from module2 import open as open2
 
 ## 异常
 
+使用`raise`来引发异常。
 
+第一个例子 raise Exception 引发了一个没有任何错误信息的普通异常。后一个例子中则添加了一些 hyperdive overload 错误信息。
+
+```python
+>>> raise Exception
+Traceback (most recent call last):
+  File "<stdin>", line 1, in ?
+Exception
+>>> raise Exception('hyperdrive overload')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in ?
+Exception: hyperdrive overload
+```
+
+内建异常类型很多。这些内建异常都可以在 exceptions 模块（和内建的命名空间）中找到。可以使用`dir`函数列出模块的内容。
+
+```python
+>>> import exceptions
+>>> dir(exceptions)
+['ArithmeticError', 'AssertionError', 'AttributeError', ...]
+```
+
+**一些内建异常**
+
+|        类名         |                 描述                 |
+| :---------------: | :--------------------------------: |
+|     Exception     |              所有异常的基类               |
+|  AttributeError   |            特性引用或赋值失效时引发            |
+|      IOError      |        试图打开不存在文件（包括其他情况）时引发        |
+|    IndexError     |          在使用序列中不存在的索引时引发           |
+|     KeyError      |           在使用映射中不存在的键时引发           |
+|     NameError     |           在找不到名字（变量）时引发            |
+|    SyntaxError    |            在代码为错误形式时引发             |
+|     TypeError     |       在内建操作或者函数应用于错误类型的对象时引发       |
+|    ValueError     | 在内建操作或者函数应用于正确类型的对象，但是对象使用不合适的值时引发 |
+| ZeroDivisionError |        在除法或者模除操作的第二个参数为0时引发        |
+
+
+
+* 捕获示例 - `source/exceptions/catching_exceptions.py`
+
+  ​
 
 ## 魔术方法、属性和迭代器
+
+构造方法 - `source/magic_methods_properties_iterators/constructors.py`
+
+基本的序列和映射规则 - `source/magic_methods_properties_iterators/item_access.py`**
+
+序列和映射是对象的集合。为了实现它们基本的行为（规则），如果对象是不可变的，那么就需要使用两个魔术方法，如果是可变的则需要使用4个。
+
+* `__len_(self)`：这个方法应该返回集合中所含项目的数量。对于序列来说，这就是元素的个数；对于映射来说，则是键值对的数量。如果`__len_`返回0（并且没有实现重写该行为的`__nonzero_`），对象会被当做一个布尔变量中的假值（空的列表，元组，字符串和字典也一样）进行处理。
+* `__getitem_(self.key)`：这个方法返回与所给键对应的值。对于一个序列，键应该是一个`0~n-1`的整数（或者像后面所说的负数），n 是序列的长度；对于映射来说，可以使用任何种类的键。
+* `__setitem_(self,key,value)`：这个方法应该按一定的方式存储和 key 相关的 value，该值随后可使用`__getitem_`来获取。当然，只能为可以修改的对象定义这个方法。
+* `__delitem_(self,key)`：这个方法在对一部分对象使用 del 语句时被调用，同时必须删除和元素相关的键。这个方法也是为可修改的对象定义的（并不是删除全部的对象，而只删除一些需要移除的元素）。
+
+属性 - `source/magic_methods_properties_iterators/properties.py`
+
+静态方法和类成员方法 - `source/magic_methods_properties_iterators/static_class_methods.py`
+
+迭代器 - `source/magic_methods_properties_iterators/iterators.py`
+
+生成器 - `source/magic_methods_properties_iterators/generators.py`
 
 
 
