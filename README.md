@@ -294,17 +294,76 @@ Exception: hyperdrive overload
 
 生成器 - `source/magic_methods_properties_iterators/generators.py`
 
+八皇后 - `source/magic_methods_properties_iterators/the_eight_queens.py`
+
 
 
 ## 自带电池
+
+* 简单的模块导入测试 - `source/batteries/hello.py` `source/batteries/hello_test.py`
+
+使用列表推导式打印模块copy 不含下划线开头的名字列表。
+
+```python
+>>> [n for n in dir(copy) if not n.startswith('_')]
+['Error', 'PyStringMap', 'copy', 'deepcopy', 'dispatch_table', 'error', 'name', 't']
+```
+
+`__all__`变量
+
+```python
+>>> copy.__all__
+['Error', 'copy', 'deepcopy']
+```
+
+此变量告诉解释器：从模块导入所有名字代表什么含义。
+
+```python
+from copy import *
+```
+
+如果需要导入`PyStringMap`的话，就必须显式地实现，或者导入 `copy` 然后使用 `copy.PyStringMap`,或者使用 `from copy import PyStringMap`
+
+**标准库**
+
+* sys：通过该模块可以访问到多个和 Python 解释器联系紧密的变量和函数。
+* os：通过该模块中的函数可以产生随机数、从序列中选取随机元素以及打乱列表元素。
+* fileinput：通过该模块可以轻松遍历多个文件和流中的所有行。
+* sets、heapq 和 deque：这3个模块提供了3个有用的数据结构。集合也以内建的类型 set 存在。
+* time：通过该模块可以获取当前时间，并可进行时间日期操作和格式化。
+* random：通过该模块中的函数可以产生函数、从序列中选取随机元素以及打乱列表元素。
+* shelve：通过该模块可以创建持续性映射，同时将映射的内容保存在给定文件名的数据库中。
+* re：支持正则表达式的模块。
 
 
 
 ## 文件和流
 
+使用`open`打开文件。`open`函数中模式参数的常用值。
+
+| 值    | 描述                 |
+| ---- | ------------------ |
+| 'r'  | 读模式                |
+| 'w'  | 写模式                |
+| 'a'  | 追加模式               |
+| 'b'  | 二进制模式（可添加到其他模式中使用） |
+| '+'  | 读/写模式（可添加到其他模式中使用） |
+
+**管道输出** - `source/files_stuff/counts_words.py`
+
+```sh
+cat hello.txt| python counts_words.py 
+```
+
+读一行使用`file.readline`
+
+字节操作 - `source/files_stuff/byte_by_byte.py`
+
 
 
 ## 图形用户界面
+
+
 
 
 
