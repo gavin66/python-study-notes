@@ -1,4 +1,4 @@
-> 本项目为本人的 Python 自学笔记。根据《Python 基础教程（第二版 修订版）》所得总结。所使用的 Python 版本为 `3.5.1`
+> 本项目为本人的 Python 自学笔记。根据《Python 基础教程（第二版 修订版）》所得总结。所使用的 Python 版本为 `3.6.0`
 
 
 
@@ -190,7 +190,7 @@ from module2 import open as open2
 
 * 赋值魔法 - `source/conditionals_loops_statements/assignment_magic.py`
 * 条件与条件语句 - `source/conditionals_loops_statements/conditions_statements.py`
-*  比较运算符
+* 比较运算符
 
 |    表达式     |         描述          |
 | :--------: | :-----------------: |
@@ -363,11 +363,28 @@ cat hello.txt| python counts_words.py
 
 ## 图形用户界面
 
+**一些支持 Python 的流行 GUI 工具包**
 
+|    工具包     | 描述                                     | 网站                                       |
+| :--------: | -------------------------------------- | ---------------------------------------- |
+|  Tkinter   | 使用 Tk 平台，很容易得到，半标准。                    | http://wiki.python.org/moin/TkInter      |
+|  wxpython  | 基于 wxWindows，跨平台越来越流行。                 | http://wxpython.org                      |
+| Python Win | 只能在 Windows 上使用，使用了本机的 Windows GUI 功能。 | http://starship.python.net/crew/mhammond |
+| Java Swing | 只能用于 Jython，使用本机的 Java GUI             | http://java.sun.com/docs/books/tutorial/uiswing |
+|   PyGTK    | 使用 GTK 平台，在 Linux 上很流行                 | http://pygtk.org                         |
+|    PyQt    | 使用 Qt 平台，跨平台。                          | http://wiki.python.org/moin/PyQt         |
 
+* 窗口和组件 - `source/gui/windows_components.py`
 
+* 智能布局 - `source/gui/intelligent_layout.py`
+
+* 最终示例 - `source/gui/final_gui.py`
+
+  ​
 
 ## 数据库支持
+
+
 
 
 
