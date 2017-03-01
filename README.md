@@ -384,7 +384,66 @@ cat hello.txt| python counts_words.py
 
 ## 数据库支持
 
+**connect函数的常用参数**
 
+|   参数名    |         描述         | 是否可选 |
+| :------: | :----------------: | :--: |
+|   dsn    | 数据源名称，给出该参数表示数据库依赖 |  否   |
+|   user   |        用户名         |  是   |
+| password |        用户密码        |  是   |
+|   host   |        主机名         |  是   |
+| database |        数据库名        |  是   |
+
+ connect 函数返回连接对象。这个对象表示目前和数据库的会话。
+
+**连接对象的方法**
+
+|    方法名     |           描述           |
+| :--------: | :--------------------: |
+|  close()   |  关闭连接后，连接对象和它的游标均不可用   |
+|  commit()  | 如果支持的话就提交挂起的事务，否则不做任何事 |
+| rollback() |     回滚挂起的事务（可能不可用）     |
+|  cursor()  |       返回连接的游标对象        |
+
+**游标对象方法**
+
+|             名称             |             描述              |
+| :------------------------: | :-------------------------: |
+|  callproc(name[, params])  |  使用给定的名称和参数（可选）调用已命名的数据库程序  |
+|          close()           |         关闭游标后，游标不可用         |
+|   excute(oper[, params])   |      执行 Sql 操作，可能使用参数       |
+|   executemany(oper,pseq)   |     对序列中的每个参数执行 Sql 操作      |
+|         fetchone()         |  把查询的结果集中的下一行保存为序列，或者 None  |
+|     fetchmany([size])      | 获取查询结果集中的多行，默认尺寸为 arraysize |
+|         fetchall()         |      将所有（剩余）的行作为序列的序列       |
+|         nextset()          |       跳至下一个可用的结果集（可选）       |
+|    setinputsizes(sizes)    |         为参数预先定义内存区域         |
+| setoutputsize(size[, col]) |       为获取的大数据值设定缓冲区尺寸       |
+
+**游标对象特性**
+
+|     名称      |          描述           |
+| :---------: | :-------------------: |
+| description |      结果列描述的序列，只读      |
+|  rowcount   |       结果中的行数，只读       |
+|  arraysize  | fetchmany 中返回的行数，默认为1 |
+
+**DB API 构造函数和特殊值**
+
+|               名称                |          描述           |
+| :-----------------------------: | :-------------------: |
+|     Date(year, month, day)      |      创建保存日期值的对象       |
+|   Time(hour, minute, second)    |      创建保存时间值的对象       |
+| Timestamp(y, mon, d, h, min, s) |      创建保存时间戳值的对象      |
+|      DateFromTicks(ticks)       |    创建保存自新世纪以来秒数的对象    |
+|      TimeFromTicks(ticks)       |    创建保存来自秒数的时间值的对象    |
+|    TimestampFromTicks(ticks)    |   创建保存来自秒数的时间戳值的对象    |
+|         Binary(string)          |    创建保存二进制字符串值的对象     |
+|             STRING              | 描述基于字符串的列类型（比如 CHAR）  |
+|             BINARY              | 描述二进制列（比如 LONG 或 RAW） |
+|             NUMBER              |         描述数字列         |
+|            DATETIME             |       描述日期/时间列        |
+|              ROWID              |       描述行 ID 列        |
 
 
 
