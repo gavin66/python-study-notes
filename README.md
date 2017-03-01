@@ -445,11 +445,15 @@ cat hello.txt| python counts_words.py
 |            DATETIME             |       描述日期/时间列        |
 |              ROWID              |       描述行 ID 列        |
 
+* 从 https://www.ars.usda.gov/ 获取ASCII文本数据，初始化表food - `source/database/food_query.py`
+* 数据库查询 - `source/database/food_query.py`
+
 
 
 ## 网络编程
 
-
+* socket - `source/network_programming/minimal_server.py` `source/network_programming/minimal_client.py`
+* urllib 和 urllib2 两个强大的网络库
 
 ## Python 和 Web
 
