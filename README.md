@@ -457,6 +457,9 @@ cat hello.txt| python counts_words.py
 
 ## Python 和 Web
 
+* 简单的爬取数据 - `source/python_web/simple_program.py`
+* ​
+
 
 
 ## 测试
