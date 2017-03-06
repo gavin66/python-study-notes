@@ -458,19 +458,69 @@ cat hello.txt| python counts_words.py
 ## Python 和 Web
 
 * 简单的爬取数据 - `source/python_web/simple_program.py`
-* ​
+* 简单的CGI程序 - `source/python_web/simple_cgi.cgi`
 
 
 
 ## 测试
 
+* 测试驱动编程 - `source/testing/simple_test.py` `source/testing/rect_area.py`
+
+* doctest - `source/testing/my_math.py`
+
+  ```python
+  $ python3.6 my_math.py -v
+  Trying:
+      square(2)
+  Expecting:
+      4
+  ok
+  Trying:
+      square(3)
+  Expecting:
+      9
+  ok
+  1 items had no tests:
+      my_math
+  1 items passed all tests:
+     2 tests in my_math.square
+  2 tests in 2 items.
+  2 passed and 0 failed.
+  Test passed.
+  ```
+
+* unittest - `source/testing/unittest.py`
+
+  **一些有用的TestCase方法**
+
+  |                    方法                    |                    描述                    |
+  | :--------------------------------------: | :--------------------------------------: |
+  |           assert_(expr[, msg])           |        如果表达式为假则失败，可选择给出信息（注意下划线）         |
+  |         failUnless(expr[, msg])          |                 同 assert                 |
+  |         assertEqual(x, y[, msg])         |           如果两个值不同则失效，在回溯中打印两个值           |
+  |       failUnlessEqual(x, y[, msg])       |              同 assertEqual               |
+  |       assertNotEqual(x, y[, msg])        |             和 assertEqual 相反             |
+  |         failIfEqual(x, y[, msg])         |             同 assertNotEqual             |
+  | assertAlmostEqual(x, y[, places[, msg]]) | 类似于 assertEqual，但对于 float 值来说，与assertEqual不完全相同 |
+  | failUnlessAlmostEqual(x, y[, places[, msg]]) |           同 assertAlmostEqual            |
+  | assertNotAlmostEqual(x, y[, places[, msg]]) |          和 assertAlmostEqual 相反          |
+  |      failIfAlmostEqual(x, y[, msg])      |          同 assertNotAlmostEqual          |
+  |     assertRaises(exc, callable, ...)     |  除非在（使用可选参数）调用是 callable 引发 exc 异常否则失败   |
+  |   failUnlessRaises(exc, callable, ...)   |              同 assertRaises              |
+  |           failIf(expr[, msg])            |               与 assert_ 相反               |
+  |               fail([msg])                |         无条件失败 - 与其他方法一样，可选择提供信息          |
+
+* 分析 - `source/testing/profiling.py`
+
 
 
 ## 扩展 Python
+
+Jython 和 IronPython
 
 
 
 ## 程序打包
 
-
-
+* Distutils 基础 - `source/packaging/distutils_basics.py` `source/packaging/hello.py`
+* 使用 py2exe 和 py2app 创建可执行程序
